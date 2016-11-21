@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="8"
+    android:background="#000000">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:maxHeight="450dp"
+        android:id="@+id/picture"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#5D4B4B"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="add workout"
+            android:background="#212645"
+            android:layout_marginLeft="25dp"
+            android:textColor="#DFE2F1"
+            android:layout_gravity="center"
+            android:id="@+id/add_workout"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#212645"
+            android:layout_marginLeft="25dp"
+            android:textColor="#DFE2F1"
+            android:text="add client"
+            android:layout_gravity="center"
+            android:id="@+id/add_client"
+            />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#212645"
+            android:layout_marginLeft="25dp"
+            android:textColor="#DFE2F1"
+            android:text="view workouts"
+            android:layout_gravity="center"
+            android:id="@+id/list"/>
+    </LinearLayout>
+
+
+    </LinearLayout>
