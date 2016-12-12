@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#000000"
+    android:background="@drawable/back"
     tools:context="com.example.vohra.krishapp.addClient">
     <TextView
         android:layout_marginTop="50dp"
@@ -17,7 +17,6 @@
         android:layout_height="wrap_content"
         android:textSize="35dp"
         android:text="Name"
-        android:textColor="#ffffff"
         android:id="@+id/name"/>
     <EditText
         android:layout_marginTop="20dp"
@@ -26,6 +25,21 @@
         android:hint="Enter name"
         android:textColorHint="#000000"
         android:id="@+id/getname"
+        android:background="#ffffff"/>
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35dp"
+        android:text="Email"
+        android:id="@+id/email"/>
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="Enter email"
+        android:textColorHint="#000000"
+        android:id="@+id/getemail"
         android:background="#ffffff"/>
     <ImageButton
         android:layout_width="50dp"

@@ -5,50 +5,26 @@ import android.graphics.Typeface;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    Button add;
-    Button list;
-    Button client;
     ImageView picture;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Typeface comic_font=Typeface.createFromAsset(getAssets(),"comics.ttf");
-        //welcome= (TextView) findViewById(R.id.welcome);
-        //welcome.setTypeface(comic_font);
-        add= (Button)findViewById(R.id.add_workout);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,addWorkout.class);
-                startActivity(intent);
-            }
-        });
-        client= (Button)findViewById(R.id.add_client);
-        client.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,addClient.class);
-                startActivity(intent);
-            }
-        });
-        list= (Button)findViewById(R.id.list);
-        list.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,viewWorkouts.class);
-                startActivity(intent);
-            }
-        });
+        Typeface typeface=Typeface.createFromAsset(getAssets(),"babas.ttf");
+        TextView textView= (TextView) findViewById(R.id.welcome);
+        textView.setTypeface(typeface);
 
         final ArrayList<Integer> pics = new ArrayList<>();
         pics.add(R.drawable.arnold);
@@ -70,5 +46,28 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         handler.postDelayed(runnable, 2000); //for initial delay..
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);//Menu Resource, Menu
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.addclient:
+                intent=new Intent(MainActivity.this,addClient.class);
+                startActivity(intent);
+                return true;
+            case R.id.removeclient:
+                intent=new Intent(MainActivity.this,addWorkout.class);
+                startActivity(intent);
+                return true;
+            case R.id.view:
+                intent=new Intent(MainActivity.this,viewWorkouts.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
