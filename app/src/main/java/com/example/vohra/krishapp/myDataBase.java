@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class myDataBase extends SQLiteOpenHelper {
     public static String DATABASE="myDataBase";
     public static myDataBase db;
-    String USERTABLE="Create table user(name TEXT)";
+    String USERTABLE="Create table user(name TEXT, email TEXT)";
     String WORKTABLE="CREATE TABLE work(name TEXT, day TEXT, date TEXT, stime TEXT, etime TEXT, workout TEXT)";
     public static myDataBase getInstance(Context context)
     {
@@ -34,11 +34,12 @@ public class myDataBase extends SQLiteOpenHelper {
         db.execSQL(USERTABLE);
         db.execSQL(WORKTABLE);
     }
-    public void insert(String n)
+    public void insert(String name, String email)
     {
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues cv=new ContentValues();
-        cv.put("name",n);
+        cv.put("name",name);
+        cv.put("email",email);
         db.insert("user",null,cv);
     }
     public ArrayList<String> getClients()
@@ -121,6 +122,5 @@ public class myDataBase extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
     }
 }

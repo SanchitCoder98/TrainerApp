@@ -3,6 +3,7 @@ package com.example.vohra.krishapp;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.StringTokenizer;
 
+
 public class addWorkout extends AppCompatActivity {
     Spinner clients;
     ImageButton date;
@@ -35,12 +37,17 @@ public class addWorkout extends AppCompatActivity {
     ImageButton adduser;
     CheckBox upperbody;
     CheckBox lowerbody;
-    CheckBox core;
+    CheckBox abdominal;
+    CheckBox sides;
+    CheckBox hips;
+    CheckBox bicep;
     CheckBox chest;
     CheckBox back;
-    CheckBox arms;
+    CheckBox tricep;
     CheckBox shoulders;
     CheckBox legs;
+    CheckBox cardio;
+    CheckBox kick;
     String dwk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,12 +129,34 @@ public class addWorkout extends AppCompatActivity {
 
         upperbody= (CheckBox) findViewById(R.id.upperbody);
         lowerbody= (CheckBox) findViewById(R.id.lowerbody);
-        core= (CheckBox) findViewById(R.id.core);
+        abdominal= (CheckBox) findViewById(R.id.abdominal);
+        sides= (CheckBox) findViewById(R.id.sides);
         chest= (CheckBox) findViewById(R.id.chest);
         back= (CheckBox) findViewById(R.id.back);
         shoulders= (CheckBox) findViewById(R.id.shoulders);
         legs= (CheckBox) findViewById(R.id.legs);
-        arms= (CheckBox) findViewById(R.id.arms);
+        bicep= (CheckBox) findViewById(R.id.bicep);
+        tricep= (CheckBox) findViewById(R.id.tricep);
+        kick= (CheckBox) findViewById(R.id.kick);
+        cardio= (CheckBox) findViewById(R.id.cardio);
+        hips= (CheckBox) findViewById(R.id.hips);
+
+        Typeface typeface=Typeface.createFromAsset(getAssets(),"babas.ttf");
+        upperbody.setTypeface(typeface);
+        lowerbody.setTypeface(typeface);
+        abdominal.setTypeface(typeface);
+        sides.setTypeface(typeface);
+        chest.setTypeface(typeface);
+        back.setTypeface(typeface);
+        shoulders.setTypeface(typeface);
+        legs.setTypeface(typeface);
+        bicep.setTypeface(typeface);
+        tricep.setTypeface(typeface);
+        kick.setTypeface(typeface);
+        cardio.setTypeface(typeface);
+        hips.setTypeface(typeface);
+
+
 
         adduser= (ImageButton) findViewById(R.id.add);
         adduser.setOnClickListener(new View.OnClickListener() {
@@ -138,10 +167,14 @@ public class addWorkout extends AppCompatActivity {
                     works+=upperbody.getText().toString()+" ";
                 if(lowerbody.isChecked())
                     works+=lowerbody.getText().toString()+" ";
-                if(core.isChecked())
-                    works+=core.getText().toString()+" ";
-                if(arms.isChecked())
-                    works+=arms.getText().toString()+" ";
+                if(abdominal.isChecked())
+                    works+=abdominal.getText().toString()+" ";
+                if(sides.isChecked())
+                    works+=sides.getText().toString()+" ";
+                if(bicep.isChecked())
+                    works+=bicep.getText().toString()+" ";
+                if(tricep.isChecked())
+                    works+=tricep.getText().toString()+" ";
                 if(back.isChecked())
                     works+=back.getText().toString()+" ";
                 if(chest.isChecked())
@@ -150,6 +183,12 @@ public class addWorkout extends AppCompatActivity {
                     works+=shoulders.getText().toString()+" ";
                 if(legs.isChecked())
                     works+=legs.getText().toString()+" ";
+                if(cardio.isChecked())
+                    works+=cardio.getText().toString()+" ";
+                if(kick.isChecked())
+                    works+=kick.getText().toString()+" ";
+                if(hips.isChecked())
+                    works+=hips.getText().toString()+" ";
                 Workout workout=new Workout(name,dwk,getDate,getStartTime,getEndTime,works);
                 dataBase=myDataBase.getInstance(addWorkout.this);
                 dataBase.insertWork(workout);

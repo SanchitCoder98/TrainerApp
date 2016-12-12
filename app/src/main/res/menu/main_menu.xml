@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Add Client"
+        android:id="@+id/addclient">
+    </item>
+    <item
+        android:title="Add Workout"
+        android:id="@+id/removeclient">
+    </item>
+    <item
+        android:title="View Workouts"
+        android:id="@+id/view">
+    </item>
+
+</menu>

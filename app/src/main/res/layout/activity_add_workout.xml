@@ -14,7 +14,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.vohra.krishapp.addWorkout"
-    android:background="#000000">
+    android:background="@drawable/back">
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,9 +52,8 @@
         android:layout_below="@+id/endtime"
         android:text="Upper Body"
         android:textSize="25dp"
-        android:textColor="#ffffff"
         android:id="@+id/upperbody"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginLeft="75dp"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,26 +61,31 @@
         android:textSize="25dp"
         android:text="Lower Body"
         android:id="@+id/lowerbody"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginLeft="75dp"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lowerbody"
         android:textSize="25dp"
-        android:text="Core"
-        android:id="@+id/core"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"/>
+        android:text="Abdominal"
+        android:id="@+id/abdominal"
+        android:layout_marginLeft="75dp"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/core"
+        android:layout_below="@+id/abdominal"
         android:textSize="25dp"
+        android:text="Sides"
+        android:id="@+id/sides"
+        android:layout_marginLeft="75dp"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sides"
         android:text="Chest"
         android:id="@+id/chest"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="25dp"
+        android:layout_marginLeft="75dp"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,26 +93,31 @@
         android:textSize="25dp"
         android:text="Back"
         android:id="@+id/back"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginLeft="75dp"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/back"
         android:textSize="25dp"
-        android:text="Arms"
-        android:id="@+id/arms"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"/>
+        android:text="Bicep"
+        android:id="@+id/bicep"
+        android:layout_marginLeft="75dp"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/arms"
+        android:text="Tricep"
+        android:textSize="25dp"
+        android:layout_marginLeft="75dp"
+        android:layout_below="@id/bicep"
+        android:id="@+id/tricep"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tricep"
         android:textSize="25dp"
         android:text="Legs"
         android:id="@+id/legs"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginLeft="75dp"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -116,12 +125,35 @@
         android:layout_below="@+id/legs"
         android:text="Shoulders"
         android:id="@+id/shoulders"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginLeft="75dp"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_below="@+id/shoulders"
+        android:text="Cardio"
+        android:id="@+id/cardio"
+        android:layout_marginLeft="75dp"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_below="@+id/cardio"
+        android:text="Hips"
+        android:id="@+id/hips"
+        android:layout_marginLeft="75dp"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_below="@+id/hips"
+        android:text="Kick Boxing"
+        android:id="@+id/kick"
+        android:layout_marginLeft="75dp"/>
     <ImageButton
         android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/shoulders"
+        android:layout_below="@+id/kick"
         android:layout_centerHorizontal="true"
         android:background="@drawable/adduser"
         android:textSize="25dp"

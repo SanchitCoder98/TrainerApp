@@ -40,7 +40,8 @@
         android:hint="Enter Email"
         android:textColorHint="#000000"
         android:id="@+id/getemail"
-        android:background="#ffffff"/>
+        android:background="#ffffff"
+        android:inputType="textEmailAddress"/>
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"

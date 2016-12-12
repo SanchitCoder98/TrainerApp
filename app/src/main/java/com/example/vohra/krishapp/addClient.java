@@ -15,16 +15,21 @@ public class addClient extends AppCompatActivity {
     EditText name;
     TextView nam;
     ImageButton add;
+    TextView email;
+    EditText emai;
     myDataBase dataBaseHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_client);
-        Typeface typeface=Typeface.createFromAsset(getAssets(),"comics.ttf");
+        Typeface typeface=Typeface.createFromAsset(getAssets(),"babas.ttf");
         nam= (TextView) findViewById(R.id.name);
         nam.setTypeface(typeface);
         name= (EditText) findViewById(R.id.getname);
         add= (ImageButton) findViewById(R.id.adduser);
+        email= (TextView) findViewById(R.id.email);
+        email.setTypeface(typeface);
+        emai= (EditText) findViewById(R.id.getemail);
         dataBaseHelper=myDataBase.getInstance(this);
         final AlertDialog.Builder alert=new AlertDialog.Builder(addClient.this);
         alert.setTitle("Error");
@@ -40,12 +45,13 @@ public class addClient extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String n=name.getText().toString();
+                String e=emai.getText().toString();
                 if(dataBaseHelper.hasObject(n))
                 {
                     alert.show();
                 }
                 else {
-                    dataBaseHelper.insert(n);
+                    dataBaseHelper.insert(n,e);
                     Intent intent = new Intent(addClient.this, MainActivity.class);
                     startActivity(intent);
                 }
