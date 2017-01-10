@@ -119,6 +119,15 @@ public class myDataBase extends SQLiteOpenHelper {
             db.close();
         }
     }
+    public String getEmail(String n)
+    {
+        SQLiteDatabase db=this.getReadableDatabase();
+        String selectString = "SELECT * FROM USER WHERE NAME =?";
+        Cursor cursor = db.rawQuery(selectString, new String[] {n});
+        cursor.moveToFirst();
+        return cursor.getString(cursor.getColumnIndex("email"));
+
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

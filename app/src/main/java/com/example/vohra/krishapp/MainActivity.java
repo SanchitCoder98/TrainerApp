@@ -1,5 +1,6 @@
 package com.example.vohra.krishapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Handler;
@@ -13,6 +14,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -31,12 +34,13 @@ public class MainActivity extends AppCompatActivity {
         pics.add(R.drawable.arnoldd);
         pics.add(R.drawable.img3);
         picture = (ImageView) findViewById(R.id.picture);
-        //picture.setImageResource(pics.get(0));
+        final Context context=this;
+        Glide.with(context).load(R.drawable.arnold).into(picture);
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             int i=0;
             public void run() {
-                picture.setImageResource(pics.get(i));
+                Glide.with(context).load(pics.get(i)).into(picture);
                 i++;
                 if(i>pics.size()-1)
                 {
